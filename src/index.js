@@ -9,9 +9,6 @@ import App from './components/App/App';
 
 //REDUCERS
 
-
-
-
 const customer = (state={}, action) => {
     switch(action.type){
         case 'FORM_DATA':
@@ -52,13 +49,21 @@ const order = (state = {
   return state;
 }
 
-const cart = (state, action) => {
+const cart = (state = [], action) => {
+  let currentCart = state;
+  if(action.type === 'ADD_TO_ORDER'){
+      for (let i=0; i<currentCart.length; i++){
+        if (currentCart[i].name === action.payload.name){
+          return state;
+        }
+      }  
+      return [...state, action.payload];    
+  }
   return state;
 }
 
-
-
 const total = (state = 0, action) => {
+
   return state;
 
 }
@@ -69,9 +74,8 @@ const reduxStore = createStore(
       pizzas,
     //   adminOrders,
       order,
-    //   cart,
+      cart,
       customer
-
     }),
     applyMiddleware(logger)
   );
