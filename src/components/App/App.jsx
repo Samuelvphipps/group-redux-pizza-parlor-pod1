@@ -1,11 +1,14 @@
 import React from 'react';
 import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
-import {Route, HashRouter as Router} from 'react-router-dom';
+import {Route, HashRouter as Router, Link} from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
+import SelectPizza from '../SelectPizza/SelectPizza';
 
 function App() {
+
+  const dispatch = useDispatch();
 
   // gets list of pizzas on load
   useEffect(() => {
@@ -19,7 +22,7 @@ function App() {
 
     axios({
       method: 'GET',
-      url: '/'
+      url: '/api/pizza'
     })
     .then((response) => {
       console.log(response.data);
@@ -32,8 +35,6 @@ function App() {
       console.log('GET error', err);
     })
   }
-  
-
 
   return (
     <Router>
@@ -45,9 +46,10 @@ function App() {
 
 {/* TODO: display select pizza page */}
       {/* select pizzas */}
-        <Route>
-
-        </Route>
+      <Link to="/selectpizza">Select pizza</Link>
+      <Route exact path="/selectpizza">
+        <SelectPizza />
+      </Route>
 
     {/* customerInfo */}
 

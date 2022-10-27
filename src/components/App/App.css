@@ -13,3 +13,32 @@
 .App-title {
   font-size: 2em;
 }
+
+.pizza-list {
+	display: flex;
+	margin: 1rem auto;
+	padding: 0;
+	text-align: center;
+	list-style: none;
+}
+
+.pizza-card {
+  display: flex;
+  width: 200px;
+  height: 300px;
+  margin: 0.5rem;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+li img {
+  width: 80%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+li h2 {
+  font-size: 1.1em;
+}
