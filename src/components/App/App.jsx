@@ -4,6 +4,7 @@ import {useDispatch} from 'react-redux';
 import {Route, HashRouter as Router} from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
+import Checkout from '../Checkout/Checkout';
 
 function App() {
 
@@ -14,24 +15,22 @@ function App() {
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
       {/* select pizzas */}
-        <Route>
+        {/* <Route>
 
-        </Route>
+        </Route> */}
 
     {/* customerInfo */}
 
-        <Route>
+        {/* <Route>
         
-        </Route>
+        </Route> */}
 
     {/* checkout */}
-        <Route>
-        
+        <Route exact path="/checkout">
+          <Checkout />
         </Route>
 
     {/* Admin */}
-      <img src='images/pizza_photo.png' />
-      <p>Pizza is great.</p>
   
     </div>
     </Router>
