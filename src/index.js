@@ -58,6 +58,8 @@ const cart = (state = [], action) => {
         }
       }  
       return [...state, action.payload];    
+  } else if (action === 'REMOVE_FROM_ORDER') {
+    return action.payload;
   }
   return state;
 }
