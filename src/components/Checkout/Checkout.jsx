@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -43,16 +44,26 @@ function Checkout() {
         city: customer.city,
         zip: customer.zip,
         type: customer.type,
+        total: 100,
         pizzas: pizzas
     }
 
     console.log('BAO', order);
 
     const handleCheckout = () => {
-        
-    }
-
-
+        //TODO axios POST order
+        axios({
+            method: 'POST',
+            url: '/api/order',
+            data: order
+        })
+            .then((response) => {
+                console.log('POST /api/order', response);
+            })
+            .catch((err) => {
+                console.log('POST /api/order', err);
+            });
+    };
 
 
     return (
@@ -79,7 +90,7 @@ function Checkout() {
             </table>
             <div>Total: total</div>
             <Link to={`/selectpizza`}>
-                <button onClick={handleCheckout}>Checkout</button>
+                <button onClick={(evt) => handleCheckout(evt)}>Checkout</button>
             </Link>
         </>
     );
