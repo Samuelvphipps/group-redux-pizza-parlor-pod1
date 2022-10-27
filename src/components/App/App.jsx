@@ -51,7 +51,7 @@ function App() {
 
 {/* TODO: display select pizza page */}
       {/* select pizzas */}
-      <Link to="/selectpizza">Select pizza</Link>
+
       <Route exact path="/selectpizza">
         <SelectPizza />
       </Route>

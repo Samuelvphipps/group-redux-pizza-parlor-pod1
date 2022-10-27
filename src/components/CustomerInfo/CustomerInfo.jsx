@@ -14,7 +14,6 @@ function CustomerInfo () {
         console.log('in onChecked')
         setCheckedVal(value);
         console.log('value', value);
-
     }
 
     const onSubmit = (evt) => {
@@ -37,7 +36,6 @@ function CustomerInfo () {
         history.push('/checkout');
 
     }
-
     
     return (
         <>
