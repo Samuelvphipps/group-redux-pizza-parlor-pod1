@@ -10,13 +10,29 @@ import App from './components/App/App';
 //REDUCERS
 
 
-// const pizzas = (state, action) => {
 
-// }
 
-// const adminOrders = (state, action) => {
+const customer = (state={}, action) => {
+    switch(action.type){
+        case 'FORM_DATA':
+            return action.payload
+    }
 
-// }
+    return state
+}
+
+// list of pizzas from "pizza" table in database
+const pizzas = (state = [], action) => {
+  switch(action.type){
+    case 'SET_PIZZAS':
+      return action.payload;
+  }
+ return state;
+}
+
+const adminOrders = (state, action) => {
+  return state;
+}
 
 const order = (state = {
   "customer_name": "Donatello",
@@ -36,21 +52,26 @@ const order = (state = {
   return state;
 }
 
-// const cart = (state, action) => {
+const cart = (state, action) => {
+  return state;
+}
 
-// }
 
-// const customer = (state, action) => {
 
-// }
+const total = (state = 0, action) => {
+  return state;
+
+}
 
 const reduxStore = createStore(
     combineReducers({
-      // pizzas,
-      // adminOrders,
+
+      pizzas,
+    //   adminOrders,
       order,
-      // cart,
-      // customer
+    //   cart,
+      customer
+
     }),
     applyMiddleware(logger)
   );
