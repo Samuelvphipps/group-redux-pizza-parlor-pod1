@@ -64,12 +64,6 @@ const cart = (state = [], action) => {
   return state;
 }
 
-const total = (state = 0, action) => {
-
-  return state;
-
-}
-
 const reduxStore = createStore(
     combineReducers({
 
@@ -77,7 +71,8 @@ const reduxStore = createStore(
     //   adminOrders,
       order,
       cart,
-      customer
+      customer,
+
     }),
     applyMiddleware(logger)
   );

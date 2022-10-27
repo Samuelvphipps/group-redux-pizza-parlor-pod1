@@ -38,7 +38,6 @@ VALUES
 	100
 );
 
-
 CREATE TABLE "line_item" (
 	"id" SERIAL PRIMARY KEY,
 	"order_id" INT REFERENCES "orders" ON DELETE CASCADE,
