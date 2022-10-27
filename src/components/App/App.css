@@ -16,7 +16,7 @@
 
 .pizza-list {
 	display: flex;
-	margin: 1rem auto;
+	margin: 80px auto;
 	padding: 0;
 	text-align: center;
 	list-style: none;
@@ -25,11 +25,12 @@
 .pizza-card {
   display: flex;
   width: 200px;
-  height: 300px;
+  height: fit-content;
   margin: 0.5rem;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
+  background-color: #333;
 }
 
 li img {

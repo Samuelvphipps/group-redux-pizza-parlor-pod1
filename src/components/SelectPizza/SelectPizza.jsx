@@ -28,16 +28,11 @@ function SelectPizza() {
               currentCart = currentCart.splice(i, 1);
             }
         }
-        
 
         console.log(currentCart);
         dispatch({
             type: 'REMOVE_FROM_ORDER',
             payload: currentCart
-        });
-        dispatch({
-            type: 'SET_TOTAL',
-            payload: total
         });
     }
 
@@ -60,18 +55,18 @@ function SelectPizza() {
     return (
         <>
         <h1>Select Pizza</h1>
-            <ul className='pizza-list'>
-                {pizzas.map(pizza => 
-                    {
-                        return (<li className='pizza-card' key={pizza.id}>
-                            <h2>{pizza.name}</h2>
-                            {pizza.description}
-                            {pizza.price}
-                            <img src={pizza.image_path} />
-                            {displayEither(pizza)}
-                        </li>)
-                    })}
-            </ul>
+        <ul className='pizza-list'>
+            {pizzas.map(pizza => 
+                {
+                    return (<li className='pizza-card' key={pizza.id}>
+                        <h2>{pizza.name}</h2>
+                        {pizza.description}
+                        {pizza.price}
+                        <img src={pizza.image_path} />
+                        {displayEither(pizza)}
+                    </li>)
+                })}
+        </ul>
             <div>
                 <button onClick={(evt)=>(onNext(evt))}>NEXT</button>
             </div>

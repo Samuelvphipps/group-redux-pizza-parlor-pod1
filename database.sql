@@ -1,3 +1,5 @@
+DROP TABLE "pizza" CASCADE;
+
 CREATE TABLE "pizza" (
 	"id" SERIAL PRIMARY KEY,
 	"name" VARCHAR(100) NOT NULL,
@@ -7,13 +9,13 @@ CREATE TABLE "pizza" (
 );
 
 INSERT INTO "pizza" ("name", "description", "price", "image_path")
-VALUES ('Tomato Soup','If you like pizza, but you hate the toppings, the cheese, and the crust, you''ll love this!',12.99,'images/pizza_photo.png'),
-('Onomatopizza','We start with a WHOMP of dough, SPLAT some marinara on it, PLOP enough cheese on there to make a mouse PEEP. Top it off with some SIZZLING bacon, and BOOM there it is! We guarantee you''ll SMACK your lips.',14.99,'images/pizza_photo.png'),
-('Pepperoni','Classic pizza with cheese and pepperoni. Baked with a traditional crust in our brick oven.',14.99,'images/pizza_photo.png'),
-('Over the Rainbow','Taste the rainbow! One ingredient of each color: pepperoni, doritos, pineapple, olives, cheese, peppers and onion. Complimentary water served in a spray bottle to taste an actual rainbow.',19.99,'images/pizza_photo.png'),
-('Chinese Firedragon','Pepperoni, pineapple and banana peppers.',15.99,'images/pizza_photo.png'),
-('Bad Date','Garlic, Onion and Pepperoni.',24.99,'images/pizza_photo.png'),
-('Another Little Pizza My Heart', 'Cheese Pizza. Personal size only.', 5.99,'images/pizza_photo.png');
+VALUES ('Tomato Soup','If you like pizza, but you hate the toppings, the cheese, and the crust, you''ll love this!',12.99,'images/tomato_soup.jpeg'),
+('Onomatopizza','We start with a WHOMP of dough, SPLAT some marinara on it, PLOP enough cheese on there to make a mouse PEEP. Top it off with some SIZZLING bacon, and BOOM there it is! We guarantee you''ll SMACK your lips.',14.99,'/images/bacon_pizza.jpeg'),
+('Pepperoni','Classic pizza with cheese and pepperoni. Baked with a traditional crust in our brick oven.',14.99,'images/pepperoni_pizza.webp'),
+('Over the Rainbow','Taste the rainbow! One ingredient of each color: pepperoni, doritos, pineapple, olives, cheese, peppers and onion. Complimentary water served in a spray bottle to taste an actual rainbow.',19.99,'images/rainbow_pizza.jpeg'),
+('Chinese Firedragon','Pepperoni, pineapple and banana peppers.',15.99,'images/fire_dragon.jpeg'),
+('Bad Date','Garlic, Onion and Pepperoni.',24.99,'images/bad_date_pizza.jpeg'),
+('Another Little Pizza My Heart', 'Cheese Pizza. Personal size only.', 5.99,'images/another_little_pizza.jpeg');
 
 CREATE TABLE "orders" (
 	"id" SERIAL PRIMARY KEY,
@@ -30,11 +32,11 @@ INSERT INTO "orders"
 ("customer_name", "street_address", "city", "zip", "type", "total")
 VALUES
 (
-	"Sam",
-	"5107 Greenwood DR",
-	"Mounds View",
-	"55112",
-	"pickup",
+	'Sam',
+	'5107 Greenwood DR',
+	'Mounds View',
+	'55112',
+	'pickup',
 	100
 );
 
