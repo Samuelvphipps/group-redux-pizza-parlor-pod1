@@ -10,37 +10,37 @@ import App from './components/App/App';
 //REDUCERS
 
 
-const pizzas = (state, action) => {
+// const pizzas = (state, action) => {
+//     return state
+// }
 
-}
+// const adminOrders = (state, action) => {
+//     return state
+// }
 
-const adminOrders = (state, action) => {
+// const order = (state, action) => {
+//     return state
+// }
 
-}
+// const cart = (state, action) => {
+//     return state
+// }
 
-const order = (state, action) => {
+// const customer = (state, action) => {
+//     return state
+// }
 
-}
+// const reduxStore = createStore(
+//     combineReducers({
+//     //   pizzas,
+//     //   adminOrders,
+//     //   order,
+//     //   cart,
+//     //   customer
+//     }),
+//     applyMiddleware(logger)
+//   );
 
-const cart = (state, action) => {
-
-}
-
-const customer = (state, action) => {
-
-}
-
-const reduxStore = createStore(
-    combineReducers({
-      pizzas,
-      adminOrders,
-      order,
-      cart,
-      customer
-    }),
-    applyMiddleware(logger)
-  );
-
-
+{/* <Provider store={reduxStore}></Provider> */}
 //Provider
-ReactDOM.render(<Provider store={reduxStore}><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
