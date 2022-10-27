@@ -4,7 +4,11 @@ import {useDispatch} from 'react-redux';
 import {Route, HashRouter as Router, Link} from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
+
+import CustomerInfo from '../CustomerInfo/CustomerInfo';
+
 import SelectPizza from '../SelectPizza/SelectPizza';
+
 
 function App() {
 
@@ -53,8 +57,8 @@ function App() {
 
     {/* customerInfo */}
 
-        <Route>
-        
+        <Route exact path="/customerinfo">
+          <CustomerInfo />
         </Route>
 
     {/* checkout */}
@@ -63,8 +67,10 @@ function App() {
         </Route>
 
     {/* Admin */}
-      <img src='images/pizza_photo.png' />
-      <p>Pizza is great.</p>
+
+
+      {/* <img src='images/pizza_photo.png' />
+      <p>Pizza is great.</p> */}
   
     </div>
     </Router>
