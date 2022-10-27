@@ -49,6 +49,7 @@ const order = (state = {
   return state;
 }
 
+
 const cart = (state = [], action) => {
   let currentCart = state;
   if(action.type === 'ADD_TO_ORDER'){
@@ -70,12 +71,13 @@ const total = (state = 0, action) => {
 
 const reduxStore = createStore(
     combineReducers({
-
       pizzas,
     //   adminOrders,
       order,
       cart,
-      customer
+      customer,
+      total
+
     }),
     applyMiddleware(logger)
   );
