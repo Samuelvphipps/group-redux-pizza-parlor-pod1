@@ -15,13 +15,11 @@ import App from './components/App/App';
 //OrdersReducer [{}] - Admin pulls from this
 
 
-//currentOrderReducer {} - checkout info to be emptied on checkout after sent to "orders"
-
 
 //Line-Item state [{}]
 
 
-//cart - chartArray[{}]
+//cart-chartArray[{}]
 
 
 //Admin chartArray [{}]
