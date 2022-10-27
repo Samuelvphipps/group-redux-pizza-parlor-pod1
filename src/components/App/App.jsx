@@ -4,6 +4,7 @@ import {useDispatch} from 'react-redux';
 import {Route, HashRouter as Router, Link} from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
+import Checkout from '../Checkout/Checkout';
 
 import CustomerInfo from '../CustomerInfo/CustomerInfo';
 
@@ -62,8 +63,8 @@ function App() {
         </Route>
 
     {/* checkout */}
-        <Route>
-        
+        <Route exact path="/checkout">
+          <Checkout />
         </Route>
 
     {/* Admin */}

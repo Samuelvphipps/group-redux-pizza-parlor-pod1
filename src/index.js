@@ -34,7 +34,21 @@ const adminOrders = (state, action) => {
   return state;
 }
 
-const order = (state, action) => {
+const order = (state = {
+  "customer_name": "Donatello",
+  "street_address": "20 W 34th St",
+  "city": "New York",
+  "zip": "10001",
+  "total": "27.98",
+  "type": "Pickup",
+  "pizzas": [{
+    "id": "1",
+    "quantity": "1"
+  }, {
+    "id": "2",
+    "quantity": "1"
+  }]
+}, action) => {
   return state;
 }
 
@@ -54,7 +68,7 @@ const reduxStore = createStore(
 
       pizzas,
     //   adminOrders,
-    //   order,
+      order,
     //   cart,
       customer
 
@@ -64,4 +78,5 @@ const reduxStore = createStore(
 
 
 //Provider
+// ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(<Provider store={reduxStore}><App /></Provider>, document.getElementById('root'));
