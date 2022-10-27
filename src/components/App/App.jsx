@@ -10,6 +10,8 @@ import CustomerInfo from '../CustomerInfo/CustomerInfo';
 
 import SelectPizza from '../SelectPizza/SelectPizza';
 
+import Admin from '../Admin/Admin';
+
 
 function App() {
 
@@ -68,7 +70,9 @@ function App() {
         </Route>
 
     {/* Admin */}
-
+        <Route exact path="/admin">
+          <Admin />
+        </Route>
 
       {/* <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p> */}

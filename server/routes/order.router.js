@@ -39,6 +39,7 @@ router.post('/', async (req, res) => {
             return client.query(insertLineItemText, insertLineItemValues);
         }));
 
+        
         await client.query('COMMIT')
         res.sendStatus(201);
     } catch (error) {
