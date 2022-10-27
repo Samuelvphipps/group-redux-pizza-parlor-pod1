@@ -10,21 +10,7 @@ import App from './components/App/App';
 //REDUCERS
 
 
-// const pizzas = (state, action) => {
-//     return state
-// }
 
-// const adminOrders = (state, action) => {
-//     return state
-// }
-
-// const order = (state, action) => {
-//     return state
-// }
-
-// const cart = (state, action) => {
-//     return state
-// }
 
 const customer = (state={}, action) => {
     switch(action.type){
@@ -35,13 +21,43 @@ const customer = (state={}, action) => {
     return state
 }
 
+// list of pizzas from "pizza" table in database
+const pizzas = (state = [], action) => {
+  switch(action.type){
+    case 'SET_PIZZAS':
+      return action.payload;
+  }
+ return state;
+}
+
+const adminOrders = (state, action) => {
+  return state;
+}
+
+const order = (state, action) => {
+  return state;
+}
+
+const cart = (state, action) => {
+  return state;
+}
+
+
+
+const total = (state = 0, action) => {
+  return state;
+
+}
+
 const reduxStore = createStore(
     combineReducers({
-    //   pizzas,
+
+      pizzas,
     //   adminOrders,
     //   order,
     //   cart,
       customer
+
     }),
     applyMiddleware(logger)
   );
