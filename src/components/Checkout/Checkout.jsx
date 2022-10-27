@@ -11,7 +11,7 @@ function Checkout() {
 
     const cart = useSelector(store => store.cart);
     const total = useSelector(store => store.total);
-    console.log('order in Checkout', customer);
+    console.log('customer in Checkout', customer);
     console.log('cart in Checkout', cart);
     console.log('total in Checkout', total);
 
@@ -26,17 +26,30 @@ function Checkout() {
         "zip": "10001", customer
         "total": "27.98", total
         "type": "Pickup", customer
-        "pizzas": [{ cart
-        "id": "1",
-        "quantity": "1"
-        }, {
+        "pizzas": [{"id": "1","quantity": "1"}, {
         "id": "2",
         "quantity": "1"
         }]
     } */
 
-    const handleCheckout = () => {
+    const pizzas = cart.map((item) => {
+        return { id: item.id, quantity: 1 }
+    })
+    console.log('pizzas to POST', pizzas);
 
+    const order = {
+        customer_name: customer.customer_name,
+        street_address: customer.street_address,
+        city: customer.city,
+        zip: customer.zip,
+        type: customer.type,
+        pizzas: pizzas
+    }
+
+    console.log('BAO', order);
+
+    const handleCheckout = () => {
+        
     }
 
 
