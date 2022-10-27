@@ -1,32 +1,46 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux'; 
+import logger from 'redux-logger';
 import './index.css';
 import App from './components/App/App';
-
-
 
 
 //REDUCERS
 
 
-//PizzaReducer [{}]
+const pizzas = (state, action) => {
 
+}
 
-//OrdersReducer [{}] - Admin pulls from this
+const adminOrders = (state, action) => {
 
+}
 
+const order = (state, action) => {
 
-//Line-Item state [{}]
+}
 
+const cart = (state, action) => {
 
-//cart-chartArray[{}]
+}
 
+const customer = (state, action) => {
 
-//Admin chartArray [{}]
+}
 
-
-//COMBINE REDUCERS
+const reduxStore = createStore(
+    combineReducers({
+      pizzas,
+      adminOrders,
+      order,
+      cart,
+      customer
+    }),
+    applyMiddleware(logger)
+  );
 
 
 //Provider
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Provider store={reduxStore}><App /></Provider>, document.getElementById('root'));
