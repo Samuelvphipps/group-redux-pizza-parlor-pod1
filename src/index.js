@@ -26,21 +26,26 @@ import App from './components/App/App';
 //     return state
 // }
 
-// const customer = (state, action) => {
-//     return state
-// }
+const customer = (state={}, action) => {
+    switch(action.type){
+        case 'FORM_DATA':
+            return action.payload
+    }
 
-// const reduxStore = createStore(
-//     combineReducers({
-//     //   pizzas,
-//     //   adminOrders,
-//     //   order,
-//     //   cart,
-//     //   customer
-//     }),
-//     applyMiddleware(logger)
-//   );
+    return state
+}
 
-{/* <Provider store={reduxStore}></Provider> */}
+const reduxStore = createStore(
+    combineReducers({
+    //   pizzas,
+    //   adminOrders,
+    //   order,
+    //   cart,
+      customer
+    }),
+    applyMiddleware(logger)
+  );
+
+
 //Provider
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Provider store={reduxStore}><App /></Provider>, document.getElementById('root'));

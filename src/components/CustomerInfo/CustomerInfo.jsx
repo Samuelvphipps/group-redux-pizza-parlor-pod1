@@ -1,18 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from "react-router-dom";
 
 function CustomerInfo () {
 
+    const dispatch=useDispatch();
+    const history=useHistory();
+    //localstate for radio buttons
     const [checkedVal, setCheckedVal] = useState('')
 
-    const [formVal, setFormVal] = useState({
-        customer_name: '',
-        street_address: '',
-        city: '',
-        zip: '',
-        type: ''
-    })
-
-    
+    //on radio check set local state (Im sure there is a better way to do this)
     const onChecked = (value) => {
         console.log('in onChecked')
         setCheckedVal(value);
@@ -22,13 +19,23 @@ function CustomerInfo () {
 
     const onSubmit = (evt) => {
         evt.preventDefault();
-        setFormVal({
+
+        //create new customer to dispatch
+        let newCustomer=({
             customer_name: evt.target.customer_name.value,
             street_address: evt.target.street_address.value,
             city: evt.target.city.value,
             zip: evt.target.zip.value,
             type: checkedVal
         });
+        //dispatch to redux customer state
+        dispatch({
+            type: 'FORM_DATA',
+            payload: newCustomer
+        });
+
+        history.push('/checkout');
+
     }
 
     

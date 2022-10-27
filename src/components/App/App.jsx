@@ -21,7 +21,7 @@ function App() {
 
     {/* customerInfo */}
 
-        <Route path="/customerinfo">
+        <Route exact path="/customerinfo">
           <CustomerInfo />
         </Route>
 
@@ -32,7 +32,7 @@ function App() {
 
     {/* Admin */}
 
-    
+
       {/* <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p> */}
   
