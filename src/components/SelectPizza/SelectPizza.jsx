@@ -28,15 +28,22 @@ function SelectPizza() {
               currentCart = currentCart.splice(i, 1);
             }
         }
+        
+
         console.log(currentCart);
         dispatch({
             type: 'REMOVE_FROM_ORDER',
             payload: currentCart
         });
+        dispatch({
+            type: 'SET_TOTAL',
+            payload: total
+        });
     }
 
     const onNext = (evt) => {
         evt.preventDefault();
+
 
         history.push('/customerinfo');
     }
