@@ -52,26 +52,31 @@ const order = (state = {
   return state;
 }
 
-const cart = (state, action) => {
+const cart = (state = [{
+  "id": "1",
+  "quantity": "1"
+}, {
+  "id": "2",
+  "quantity": "1"
+}], action) => {
   return state;
 }
 
 
 
-const total = (state = 0, action) => {
+const total = (state = 500.00, action) => {
   return state;
 
 }
 
 const reduxStore = createStore(
     combineReducers({
-
       pizzas,
     //   adminOrders,
       order,
-    //   cart,
-      customer
-
+      cart,
+      customer,
+      total
     }),
     applyMiddleware(logger)
   );
