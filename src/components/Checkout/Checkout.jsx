@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 function Checkout() {
     const order = useSelector(store => store.order);
     console.log(order);
+    
 
     return (
         <>
