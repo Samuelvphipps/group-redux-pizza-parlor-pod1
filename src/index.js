@@ -10,33 +10,37 @@ import App from './components/App/App';
 //REDUCERS
 
 
-const pizzas = (state, action) => {
-
+const pizzas = (state = [], action) => {
+ return state;
 }
 
 const adminOrders = (state, action) => {
-
+  return state;
 }
 
 const order = (state, action) => {
-
+  return state;
 }
 
 const cart = (state, action) => {
-
+  return state;
 }
 
 const customer = (state, action) => {
+  return state;
+}
 
+const total = (state = 0, action) => {
+  return state;
 }
 
 const reduxStore = createStore(
     combineReducers({
-      pizzas,
-      adminOrders,
-      order,
-      cart,
-      customer
+//       pizzas,
+//       adminOrders,
+//       order,
+//       cart,
+//       customer
     }),
     applyMiddleware(logger)
   );
