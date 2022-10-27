@@ -1,11 +1,29 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 function SelectPizza() {
 
     // gets list of pizzas from Redux
     const pizzas = useSelector((store) => store.pizzas);
-    
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const orderPizza = (evt, pizza) => {
+        evt.preventDefault();
+
+        dispatch({
+            type: 'ADD_TO_ORDER',
+            payload: pizza
+        });
+    }
+
+    const onNext = (evt) => {
+        evt.preventDefault();
+
+        history.push('/customerinfo');
+    }
 
     return (
         <>
@@ -18,10 +36,13 @@ function SelectPizza() {
                             {pizza.description}
                             {pizza.price}
                             <img src={pizza.image_path} />
-                            <button>Order</button>
+                            <button onClick={(evt)=>orderPizza(evt, pizza)}>Order</button>
                         </li>)
                     })}
             </ul>
+            <div>
+                <button onClick={(evt)=>(onNext(evt))}>NEXT</button>
+            </div>
         </>
     );
 }
