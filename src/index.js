@@ -14,7 +14,6 @@ const customer = (state={}, action) => {
         case 'FORM_DATA':
             return action.payload
     }
-
     return state
 }
 
@@ -64,15 +63,22 @@ const cart = (state = [], action) => {
   return state;
 }
 
+const total = (state = 0, action) => {
+  switch(action.type){
+    case 'SET_TOTAL': 
+    return action.payload;
+    default: return state;
+  }
+}
+
 const reduxStore = createStore(
     combineReducers({
-
       pizzas,
     //   adminOrders,
       order,
       cart,
       customer,
-
+      total
     }),
     applyMiddleware(logger)
   );
