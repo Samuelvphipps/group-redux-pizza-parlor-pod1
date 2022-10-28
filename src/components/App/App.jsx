@@ -10,6 +10,8 @@ import CustomerInfo from '../CustomerInfo/CustomerInfo';
 
 import SelectPizza from '../SelectPizza/SelectPizza';
 
+import Admin from '../Admin/Admin';
+
 
 function App() {
 
@@ -18,8 +20,25 @@ function App() {
   // gets list of pizzas on load
   useEffect(() => {
     fetchPizzas();
+    // fetchOrders();
   }, []);
 
+//   const fetchOrders=()=>{
+
+//     axios({
+//         method: 'GET',
+//         url: '/api/order'
+//     })
+//         .then((response)=>{
+//             let orders=response.data;
+//             console.log('orders is', orders);
+//             dispatch({
+//               type:'SET_ORDERS',
+//               payload: orders,
+//             })
+//         })
+//         .catch(err=>console.error('in get orders api err', err));
+// };
 
 //TODO: get pizzas from database
   const fetchPizzas = () => {
@@ -68,7 +87,9 @@ function App() {
         </Route>
 
     {/* Admin */}
-
+        <Route exact path="/admin">
+          <Admin />
+        </Route>
 
       {/* <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p> */}
