@@ -59,6 +59,4 @@ function CustomerInfo () {
     );
 }
 
-
-
 export default CustomerInfo
