@@ -45,7 +45,7 @@ th{
 
 .pizza-list {
 	display: flex;
-	margin: 1rem auto;
+	margin: 80px auto;
 	padding: 0;
 	text-align: center;
 	list-style: none;
@@ -54,11 +54,18 @@ th{
 .pizza-card {
   display: flex;
   width: 200px;
-  height: 300px;
+  height: fit-content;
   margin: 0.5rem;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
+  background-color: #333;
+  border-radius: 10px;
+}
+
+.pizza-card > p {
+  margin: 0.2em;
+  padding: 0.2em;
 }
 
 li img {
@@ -66,9 +73,20 @@ li img {
   height: auto;
   aspect-ratio: 1;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 li h2 {
   font-size: 1.1em;
+}
+
+.pizza-card > button {
+font-size: 1em;
+}
+
+.pizza-card > button:hover {
+  background-color: rgb(166, 18, 2);
+  border: 2px solid red;
+  border-radius: 5px;
 }
 
