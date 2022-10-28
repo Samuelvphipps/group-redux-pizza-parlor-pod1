@@ -70,16 +70,16 @@ function Checkout() {
         <>
             <h2>Step 3: Checkout</h2>
             <div>{customer.street_address}</div><div>{customer.type}</div>
-            <table>
+            <table className='checkout-table'>
                 <thead>
-                    <tr>
+                    <tr className='adminRow'>
                         <th>Name</th>
                         <th>Cost</th>
                     </tr>
                 </thead>
                 <tbody>
                     {cart.map((pizza) => (
-                        <tr key={pizza.id}>
+                        <tr key={pizza.id} className='adminRow'>
                             <td>
                                 {pizza.name}
                             </td>
