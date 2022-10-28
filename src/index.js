@@ -58,7 +58,23 @@ const cart = (state = [], action) => {
       }  
       return [...state, action.payload];    
   } else if (action === 'REMOVE_FROM_ORDER') {
-    return action.payload;
+  //   console.log(action.payload.name);
+  //   //const newCart = cart.filter(cartitem => cartitem.name != action.payload.name)
+  // for (let i=0; i<currentCart.length; i++){
+  //   if (currentCart[i].name === action.payload.name){
+  //     currentCart = currentCart.splice(i, 1);
+  //   }
+
+
+    // let newCart = [];
+    //   for (i=0; i<state.length; i++) {
+    //     if (state[i].name === action.payload.name){
+    //       i++;
+    //   } else {
+    //     newCart.push(state[i]);
+    //   }
+    //state.filter(cartitem => cartitem.name !== action.payload.name)
+    return payload;
   }
   return state;
 }
@@ -74,7 +90,7 @@ const total = (state = 0, action) => {
 const reduxStore = createStore(
     combineReducers({
       pizzas,
-    //   adminOrders,
+      //adminOrders,
       order,
       cart,
       customer,

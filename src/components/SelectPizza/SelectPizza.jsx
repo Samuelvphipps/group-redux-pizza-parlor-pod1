@@ -11,22 +11,15 @@ function SelectPizza() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const [total, setTotal] = useState(0);
 
-    
-
-    const onOrder = (cart) => {
-        let sum = 0;
-        if (cart.length === 0) {
-            setTotal(0);
-            console.log(sum);
-        } else {
-            for (let i=0; i<cart.length; i++){
-                sum += Number(cart[i].price);
-            }
-            setTotal(sum);
-            console.log(sum);
+    let total = 0;
+    if (cart.length === 0) {
+        console.log('total', total);
+    } else {
+        for (let i=0; i<cart.length; i++){
+            total += Number(cart[i].price);
         }
+        console.log('total', total);
     }
     
     const orderPizza = (evt, pizza) => {
@@ -35,28 +28,26 @@ function SelectPizza() {
             type: 'ADD_TO_ORDER',
             payload: pizza
         });
-        onOrder(cart);
     }
 
     const removePizza = (evt, pizza) => {
         evt.preventDefault();
-        let currentCart = cart;
-        for (let i=0; i<currentCart.length; i++){
-            if (currentCart[i].name === pizza.name){
-              currentCart = currentCart.splice(i, 1);
-            }
-        }
-        console.log(currentCart);
+    let newCart = [];
+      for (i=0; i<cart.length; i++) {
+        if (cart[i].name === pizza.name){
+          i++;
+      } else {
+        newCart.push(pizza[i]);
+      }
         dispatch({
             type: 'REMOVE_FROM_ORDER',
-            payload: currentCart
+            payload: newCart
         });
-        onOrder(cart);
+    }
     }
 
     const onNext = (evt) => {
         evt.preventDefault();
-        // TODO: set total
 
         dispatch({
             type: 'SET_TOTAL',
@@ -66,7 +57,6 @@ function SelectPizza() {
     }
 
     function displayEither(pizza) {
-        
         for (let i=0; i<cart.length; i++){
             if (cart[i].name === pizza.name){
                 return (<button onClick={(evt)=>removePizza(evt, pizza)}>Remove</button>)
