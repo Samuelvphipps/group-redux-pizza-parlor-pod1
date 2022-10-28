@@ -78,17 +78,19 @@ function Checkout() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Onamonapizza</td>
-                        <td>$14.99</td>
-                    </tr>
-                    <tr>
-                        <td>Pepperoni</td>
-                        <td>$13.99</td>
-                    </tr>
+                    {cart.map((pizza) => (
+                        <tr key={pizza.id}>
+                            <td>
+                                {pizza.name}
+                            </td>
+                            <td>
+                                {pizza.price}
+                            </td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
-            <div>Total: total</div>
+            <div>Total: PLACEHOLDER</div>
             <Link to={`/selectpizza`}>
                 <button onClick={(evt) => handleCheckout(evt)}>Checkout</button>
             </Link>
