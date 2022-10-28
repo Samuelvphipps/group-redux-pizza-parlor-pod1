@@ -81,13 +81,13 @@ function Checkout() {
                                 {pizza.name}
                             </td>
                             <td>
-                                {pizza.price}
+                                ${pizza.price}
                             </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-            <div>Total: {total}</div>
+            <div>Total: ${total}</div>
             <Link to={`/selectpizza`}>
                 <button onClick={(evt) => handleCheckout(evt)}>Checkout</button>
             </Link>

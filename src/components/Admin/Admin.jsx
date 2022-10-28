@@ -47,7 +47,7 @@ function Admin(){
                         <td>{order.customer_name}</td>
                         <td>{order.time}</td>
                         <td>{order.type}</td>
-                        <td>{order.total}</td>
+                        <td>${order.total}</td>
                     </tr>
                 )})}
             </tbody>
