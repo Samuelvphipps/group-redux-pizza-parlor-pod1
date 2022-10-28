@@ -26,7 +26,12 @@ const pizzas = (state = [], action) => {
  return state;
 }
 
-const adminOrders = (state, action) => {
+const adminOrders = (state=[{id: 1, customer_name: 'Sam', time: 1200, type:'pickup', total: 12.93}], action) => {
+  switch(action.type){
+    case 'SET_ORDERS':
+      return action.payload;
+  }
+
   return state;
 }
 
@@ -47,6 +52,7 @@ const order = (state = {
 }, action) => {
   return state;
 }
+
 
 const cart = (state = [], action) => {
   let currentCart = state;
@@ -90,11 +96,12 @@ const total = (state = 0, action) => {
 const reduxStore = createStore(
     combineReducers({
       pizzas,
-      //adminOrders,
+      adminOrders,
       order,
       cart,
       customer,
       total
+
     }),
     applyMiddleware(logger)
   );
