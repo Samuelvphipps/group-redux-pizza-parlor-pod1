@@ -6,16 +6,18 @@ import { Link } from 'react-router-dom';
 
 function Checkout() {
 
-    const order = useSelector(store => store.order);
-    console.log(order);
+    //const order = useSelector(store => store.order);
+    // console.log(order);
     
-    let total = (state = 0, action) => {
-        total = 0;
-        for (let i=0; i<cart.length; i++){
-          total += Number(cart[i].price)
-        }
-        return total;
-      }
+
+
+    // let total = (state = 0, action) => {
+    //     total = 0;
+    //     for (let i=0; i<cart.length; i++){
+    //       total += Number(cart[i].price)
+    //     }
+    //     return total;
+    //   }
 
 
     const dispatch = useDispatch();
