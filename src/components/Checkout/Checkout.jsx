@@ -6,10 +6,8 @@ import { Link } from 'react-router-dom';
 
 function Checkout() {
 
-    //const order = useSelector(store => store.order);
+    // const order = useSelector(store => store.order);
     // console.log(order);
-    
-
 
     // let total = (state = 0, action) => {
     //     total = 0;
@@ -20,10 +18,9 @@ function Checkout() {
     //   }
 
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     const customer = useSelector(store => store.customer);
-
     const cart = useSelector(store => store.cart);
     const total = useSelector(store => store.total);
     console.log('customer in Checkout', customer);
@@ -31,21 +28,6 @@ function Checkout() {
     console.log('total in Checkout', total);
 
     // create object that look like what the state is in ORDER
-
-
-    // axios post on click with BAO built from store.cart, store.total, store.customer
-    /*{
-        "customer_name": "Donatello", customer
-        "street_address": "20 W 34th St", customer
-        "city": "New York", customer
-        "zip": "10001", customer
-        "total": "27.98", total
-        "type": "Pickup", customer
-        "pizzas": [{"id": "1","quantity": "1"}, {
-        "id": "2",
-        "quantity": "1"
-        }]
-    } */
 
     const pizzas = cart.map((item) => {
         return { id: item.id, quantity: 1 }
@@ -58,7 +40,7 @@ function Checkout() {
         city: customer.city,
         zip: customer.zip,
         type: customer.type,
-        total: 100,
+        total: total,
         pizzas: pizzas
     }
 
@@ -105,7 +87,7 @@ function Checkout() {
                     ))}
                 </tbody>
             </table>
-            <div>Total: PLACEHOLDER</div>
+            <div>Total: {total}</div>
             <Link to={`/selectpizza`}>
                 <button onClick={(evt) => handleCheckout(evt)}>Checkout</button>
             </Link>
