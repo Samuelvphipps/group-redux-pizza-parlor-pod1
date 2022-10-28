@@ -33,7 +33,7 @@ function Admin(){
     return(
         <table className='table'>
             <thead>
-                <tr>
+                <tr className="adminRow">
                     <th>Name</th>
                     <th>Time</th>
                     <th>Type</th>
@@ -43,7 +43,7 @@ function Admin(){
             <tbody>
                 {orders.map((order)=>{
                     return(
-                    <tr key={order.id}>
+                    <tr className="adminRow" key={order.id}>
                         <td>{order.customer_name}</td>
                         <td>{order.time}</td>
                         <td>{order.type}</td>
