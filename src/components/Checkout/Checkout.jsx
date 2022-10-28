@@ -67,7 +67,7 @@ function Checkout() {
         <>
             <h2>Step 3: Checkout</h2>
             <div>{customer.street_address}</div><div>{customer.type}</div>
-            <table className='checkout-table'>
+            <table className='table'>
                 <thead>
                     <tr className='adminRow'>
                         <th>Name</th>
