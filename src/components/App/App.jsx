@@ -20,25 +20,25 @@ function App() {
   // gets list of pizzas on load
   useEffect(() => {
     fetchPizzas();
-    fetchOrders();
+    // fetchOrders();
   }, []);
 
-  const fetchOrders=()=>{
+//   const fetchOrders=()=>{
 
-    axios({
-        method: 'GET',
-        url: '/api/order'
-    })
-        .then((response)=>{
-            let orders=response.data;
-            console.log('orders is', orders);
-            dispatch({
-              type:'SET_ORDERS',
-              payload: orders,
-            })
-        })
-        .catch(err=>console.error('in get orders api err', err));
-};
+//     axios({
+//         method: 'GET',
+//         url: '/api/order'
+//     })
+//         .then((response)=>{
+//             let orders=response.data;
+//             console.log('orders is', orders);
+//             dispatch({
+//               type:'SET_ORDERS',
+//               payload: orders,
+//             })
+//         })
+//         .catch(err=>console.error('in get orders api err', err));
+// };
 
 //TODO: get pizzas from database
   const fetchPizzas = () => {
