@@ -79,7 +79,7 @@ function Checkout() {
                 </thead>
                 <tbody>
                     {cart.map((pizza) => (
-                        <tr key={pizza.id}>
+                        <tr key={pizza.id} className='adminRow'>
                             <td>
                                 {pizza.name}
                             </td>
@@ -88,24 +88,6 @@ function Checkout() {
                             </td>
                         </tr>
                     ))}
-                </tbody>
-                <tbody id="checkout-tbody">
-                        <tr className='adminRow'>
-                            <td>
-                                PIZZA NAME
-                            </td>
-                            <td>
-                                PIZZA PRICE
-                            </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            PIZZA NAME
-                        </td>
-                        <td>
-                            PIZZA PRICE
-                        </td>
-                    </tr>
                 </tbody>
             </table>
             <div>Total: PLACEHOLDER</div>
