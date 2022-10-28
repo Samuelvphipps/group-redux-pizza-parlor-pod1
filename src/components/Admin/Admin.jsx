@@ -1,25 +1,37 @@
 import axios from 'axios';
 import {useSelector} from 'react-redux';
+import { useEffect, useState } from 'react';
 
 
 function Admin(){
-    
-    let orders;
 
-    axios({
-        method: 'GET',
-        url: '/api/order'
-    })
-        .then((response)=>{
-            orders=response;
-            console.log(response.data)
-        })
-        .catch(err=>console.error('in get orders api err', err));
+    const orders = useSelector(store => store.adminOrders)
 
-    
+
     return(
-        <h1>meow</h1>
-    );
+        <table className='table'>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Time</th>
+                    <th>Type</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {orders.map((order)=>{
+                    return(
+                    <tr key={order.id}>
+                        <td>{order.customer_name}</td>
+                        <td>{order.time}</td>
+                        <td>{order.type}</td>
+                        <td>{order.total}</td>
+                    </tr>
+                )})}
+            </tbody>
+        </table>
+    )
+
 }
 
 
