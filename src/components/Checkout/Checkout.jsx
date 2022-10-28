@@ -70,9 +70,9 @@ function Checkout() {
         <>
             <h2>Step 3: Checkout</h2>
             <div>{customer.street_address}</div><div>{customer.type}</div>
-            <table>
+            <table className='checkout-table'>
                 <thead>
-                    <tr>
+                    <tr className='adminRow'>
                         <th>Name</th>
                         <th>Cost</th>
                     </tr>
@@ -88,6 +88,24 @@ function Checkout() {
                             </td>
                         </tr>
                     ))}
+                </tbody>
+                <tbody id="checkout-tbody">
+                        <tr className='adminRow'>
+                            <td>
+                                PIZZA NAME
+                            </td>
+                            <td>
+                                PIZZA PRICE
+                            </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            PIZZA NAME
+                        </td>
+                        <td>
+                            PIZZA PRICE
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <div>Total: PLACEHOLDER</div>
